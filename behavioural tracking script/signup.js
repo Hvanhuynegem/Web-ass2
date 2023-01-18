@@ -48,13 +48,13 @@ function logChar(){
 }
 
 function showResults(){
-    const results = document.createElement("div");
+    const results = document.getElementById("results");
     results.id = "results";
-    results.innerHTML = "Number of mouse clicks: " + mouse_clicks.toString()
-    results.innerHTML = logTime();
-    results.innerHTML = "Total key presses: " + keys_clicked.toString();
-    results.innerHTML = logChar();
-    document.body.appendChild(results);
+    results.innerHTML = "Number of mouse clicks: " + mouse_clicks.toString() + "<br>";
+    results.innerHTML += logTime()+ "<br>";
+    results.innerHTML += "Total key presses: " + keys_clicked.toString() + "<br>";
+    results.innerHTML += logChar();
+    results.style.display = "block";
 }
 
 
