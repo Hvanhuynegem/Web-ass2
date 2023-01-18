@@ -22,5 +22,15 @@ body {
 }
 
 .long-form {
-    height: 750px;
+    height: 800px;
+}
+
+form input:invalid {
+    border-bottom: 1px solid #aa2b2b;
+
+}
+
+form input:valid {
+    border-bottom: 1px solid #2ba2aa;
+
 }

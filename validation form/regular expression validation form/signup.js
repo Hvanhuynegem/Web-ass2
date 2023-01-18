@@ -1,15 +1,26 @@
 const form = document.querySelector("#signup-form");
 
-const username = document.querySelector("#username");
-const password = document.querySelector("#password");
-const name = document.querySelector("#name");
+const username = document.getElementById("username");
+const usernameValidity = document.getElementById("username-validity");
+const password = document.getElementById("password");
+const passwordValidity = document.getElementById("password-validity");
+const name = document.getElementById("name");
+const nameValidity = document.getElementById("name-validity");
 
-const zip = document.querySelector("#ZIP");
-const email = document.querySelector("#email");
+const zip = document.getElementById("ZIP");
+const zipValidity = document.getElementById("zip-validity");
+const email = document.getElementById("email");
+const emailValidity = document.getElementById("email-validity");
 
-const country = document.querySelector("#country");
-const sex = document.querySelector("#sex");
-const language = document.querySelector("#language");
+const country = document.getElementById("country");
+const countryValidity = document.getElementById("country-validity");
+const sex = document.getElementById("sex");
+const sexValidity = document.getElementById("sex-validity");
+const language = document.getElementById("language");
+const languageValidity = document.getElementById("language-validity");
+
+const address = document.getElementById("address");
+const addressValidity = document.getElementById("address-validity");
 
 
 const username_pattern = new RegExp("([A-Z].{3,10}[^a-zA-Z])");
@@ -25,194 +36,135 @@ const language_pattern = new RegExp(".+");
 
 
 
-
-form.addEventListener('submit', function (x) {
-    // prevent the form from submitting
-    x.preventDefault();
-
-});
-
-const isRequired = (value) => {value === '' ? false : true};
-
-const isValidUsername = (username) => {
+const checkUsername = (username) => {
     const username_pattern = new RegExp("([A-Z].{3,10}[^a-zA-Z])");
     return username_pattern.test(username);
 };
 
-const isValidPassword = (password) => {
+const checkPassword = (password) => {
     const password_pattern = new RegExp("(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^0-9a-zA-Z]).{12,}");
     return password_pattern.test(password);
 };
 
-const isValidName = (name) => {
+const checkName = (name) => {
     const name_pattern = new RegExp("[a-zA-Z]+");
     return name_pattern.test(name);
 };
 
-const isValidZip = (zip) => {
+const checkZip = (zip) => {
     const zip_pattern = new RegExp("[0-9]{4}[a-zA-Z]{2}");
     return zip_pattern.test(zip);
 };
 
-const isValidEmail = (email) => {
+const checkEmail = (email) => {
     const email_pattern = new RegExp("[a-z0-9!#$%&'*+\-=?^_`{|}~](\.?[a-z0-9!#$%&'*+\-=?^_`{|}~])*@[a-z0-9.\-]+\.[a-z]{2,}");
     return email_pattern.test(email);
 };
 
-const isValidCountry = (country) => {
+const checkCountry = (country) => {
     const country_pattern = new RegExp(".+");
     return country_pattern.test(country);
 };
 
-const isValidSex = (sex) => {
+const checkSex = (sex) => {
     const sex_pattern = new RegExp(".+");
     return sex_pattern.test(sex);
 };
 
-const isValidLanguage = (language) => {
+const checkLanguage = (language) => {
     const language_pattern = new RegExp(".+");
     return language_pattern.test(language);
 };
 
+username.addEventListener("input", function() {
+    if (checkUsername(username.value)) {
+        username.setCustomValidity("");
+        usernameValidity.innerHTML = "Looking good!";
 
-const usernameCheck = () => {
-    let pass = false;
-
-    const usernameValue = username.value.trim();
-    if (!isRequired(usernameValue)){
-        showError(username, 'Username must be filled in.');
-    } else if (!isValidUsername(usernameValue)){
-        showError(username, 'must be of length 5 to 12, must start with a capital letter and end with a number or special character');
-    }
-    else {
-        showSuccess(username);
-        pass = true;
-    }
-    return pass;
-};
-
-const passwordCheck = () => {
-    let pass = false;
-
-    const passwordValue = password.value.trim();
-    if (!isRequired(passwordValue)){
-        showError(password, 'Password must be filled in.');
-    } else if (!isValidPassword(passwordValue)){
-        showError(password, 'must be of length 12, must contain at least 1 number, 1 capital letter, 1 special character');
-    }
-    else {
-        showSuccess(password);
-        pass = true;
-    }
-    return pass;
-};
-
-const nameCheck = () => {
-    let pass = false;
-
-    const nameValue = name.value.trim();
-    if (!isRequired(nameValue)){
-        showError(name, 'Name must be filled in.');
-    } else if (!isValidName(nameValue)){
-        showError(name, 'must contain only letters');
-    }
-    else {
-        showSuccess(name);
-        pass = true;
-    }
-    return pass;
-};
-
-const zipCheck = () => {
-    let pass = false;
-
-    const zipValue = zip.value.trim();
-    if (!isRequired(zipValue)){
-        showError(zip, 'ZIP must be filled in.');
-    } else if (!isValidZip(zipValue)){
-        showError(zip, 'Must contain 4 numbers, followed by two letters!');
-    }
-    else {
-        showSuccess(zip);
-        pass = true;
-    }
-    return pass;
-};
-
-const emailCheck = () => {
-    let pass = false;
-
-    const emailValue = email.value.trim();
-    if (!isRequired(emailValue)){
-        showError(email, 'Email must be filled in.');
-    } else if (!isValidEmail(emailValue)){
-        showError(email, 'Must be a valid email address!');
-    }
-    else {
-        showSuccess(email);
-        pass = true;
-    }
-    return pass;
-};
-
-const countryCheck = () => {
-    let pass = false;
-
-    const countryValue = country.value.trim();
-    if (!isRequired(countryValue)){
-        showError(country, 'Country must be filled in.');
-    } else if (!isValidCountry(countryValue)){
-        showError(country, 'Must be a valid country!');
-    }
-    else {
-        showSuccess(country);
-        pass = true;
-    }
-    return pass;
-};
-
-const sexCheck = () => {
-    let pass = false;
-
-    const sexValue = sex.value.trim();
-    if (!isRequired(sexValue)){
-        showError(sex, 'Sex must be filled in.');
-    } else if (!isValidSex(sexValue)){
-        showError(sex, 'must be Male, Female, or Other');
     } else {
-        showSuccess(sex);
-        pass = true;
+        username.setCustomValidity("Username must be between 5 and 12 characters, first character must be a capital letter, last character must be a special character");
+        usernameValidity.innerHTML = "Username must be between 5 and 12 characters, first character must be a capital letter, last character must be a special character";
     }
-    return pass;
-};
+});
 
-const languageCheck = () => {
-    let pass = false;
-
-    const languageValue = language.value.trim();
-    if (!isRequired(languageValue)){
-        showError(language, 'Language must be filled in.');
-    } else if (!isValidLanguage(languageValue)){
-        showError(language, 'must be a valid language');
+password.addEventListener("input", function() {
+    if (checkPassword(password.value)) {
+        password.setCustomValidity("");
+        passwordValidity.innerHTML = "Looking nice!";
     } else {
-        showSuccess(language);
-        pass = true;
+        password.setCustomValidity("Password must be more than 12 characters, must contain at least one capital letter, one small letter, one digit and one special character");
+        passwordValidity.innerHTML = "Password must be more than 12 characters, must contain at least one capital letter, one small letter, one digit and one special character";
     }
-    return pass;
-};
+});
 
+name.addEventListener("input", function() {
+    if (checkName(name.value)) {
+        name.setCustomValidity("");
+        nameValidity.innerHTML = "Looking super!";
+    } else {
+        name.setCustomValidity("Name must be at least 1 character, and contain only letters");
+        nameValidity.innerHTML = "Name must be at least 1 character, and contain only letters";
+    }
+});
 
-const showError = (input, message) => {
-    
-    const inputElement = input.parentElement;
+zip.addEventListener("input", function() {
+    if (checkZip(zip.value)) {
+        zip.setCustomValidity("");
+        zipValidity.innerHTML = "Great job in filling in!";
+    } else {
+        zip.setCustomValidity("ZIP must be 4 digits, followed by 2 letters");
+        zipValidity.innerHTML = "ZIP must be 4 digits, followed by 2 letters";
+    }
+});
 
-    inputElement.classList.remove('success');
-    inputElement.classList.add('error');
+email.addEventListener("input", function() {
+    if (checkEmail(email.value)) {
+        email.setCustomValidity("");
+        emailValidity.innerHTML = "Meow!";
+    } else {
+        email.setCustomValidity("Email must be in the format: [letters, numbers or special characters]@[letters or -].[letters]");
+        emailValidity.innerHTML = "Email must be in the format: [letters, numbers or special characters]@[letters or -].[letters]";
+    }
+});
 
-    const error = inputElement.querySelector('small');
-    error.textContent = message;
+country.addEventListener("input", function() {
+    if (checkCountry(country.value)) {
+        country.setCustomValidity("");
+        countryValidity.innerHTML = "Beatiful!";
+    } else {
+        country.setCustomValidity("Country must contain only letters and spaces");
+        countryValidity.innerHTML = "Country must contain only letters and spaces";
+    }
+});
 
-};
+address.addEventListener("input", function() {
+    if (checkAddress(address.value)) {
+        address.setCustomValidity("");
+        addressValidity.innerHTML = "Done!";
+    } else {
+        address.setCustomValidity("Address must contain only letters, numbers, spaces, commas, dots, dashes and apostrophes");
+        addressValidity.innerHTML = "Address must contain only letters, numbers, spaces, commas, dots, dashes and apostrophes";
+    }
+});
+
+sex.addEventListener("input", function() {
+    if (checkSex(sex.value)) {
+        sex.setCustomValidity("");
+        sexValidity.innerHTML = "Done!";
+    } else {
+        sex.setCustomValidity("Sex must be at least one character long");
+        sexValidity.innerHTML = "Write 'does not exist' if you don't have one";
+    }
+});
+
+email.setCustomValidity("You must provide email");
+zip.setCustomValidity("You must provide zip");
+name.setCustomValidity("You must provide name");
+sex.setCustomValidity("You must provide sex");
+username.setCustomValidity("You must provide username");
+country.setCustomValidity("You must provide country");
+password.setCustomValidity("You must provide password");
+
 
 
 
