@@ -25,7 +25,7 @@ body {
     height: 750px;
 }
 
-form input:invalid:required {
+form input:invalid {
     border-bottom: 1px solid #aa2b2b;
 
 }
