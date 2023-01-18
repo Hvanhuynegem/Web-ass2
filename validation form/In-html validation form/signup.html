@@ -32,7 +32,7 @@
                     name="username" 
                     placeholder="username (Required)" 
                     required
-                    pattern="([A-Z]+[a-zA-z0-9]+[0-9._%+-]).{5,12}"
+                    pattern="([A-Z].{3,10}[^a-zA-Z])"
                     title="must be of length 5 to 12, must start with a capital letter and end with a number or special character"/>
                     <!-- not sure how to do this required pattern!-->
                     <input
@@ -46,7 +46,7 @@
                     <input type="text" 
                     name="name" 
                     placeholder="Name (Required)" 
-                    required pattern="[a-zA-Z].{1,}"
+                    required pattern="[a-zA-Z]+"
                     title="must contain the alphabet only"/>    
 
                     <input 
@@ -58,20 +58,21 @@
                     type="text" 
                     name="country"
                     placeholder="Country (Required)" 
-                    required/>
+                    required pattern=".+"/>
 
-                    <input type="text" name="ZIP" placeholder="Your ZIP (Required)" required pattern="[0-9]{4} + [a-zA-Z]{2}"/>
+                    <input type="text" name="ZIP" placeholder="Your ZIP (Required)" required pattern="[0-9]{4}[a-zA-Z]{2}"/>
                     <!-- not sure how to do this required pattern!-->
-                    <input type="email" name="email" placeholder="Email (Required)" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"/>
+                    <input type="email" name="email" placeholder="Email (Required)" required pattern="[a-z0-9!#$%&'*+\-=?^_`{|}~](\.?[a-z0-9!#$%&'*+\-=?^_`{|}~])*@[a-z0-9.\-]+\.[a-z]{2,}"/>
 
-                    <input type="text" name="sex" placeholder="Sex (Required)" required pattern="[Ff]emale|[Mm]ale"
-                    list="l1" required pattern="[Mm]ale|[Ff]emale">
+                    <input type="text" name="sex" placeholder="Sex (Required)"
+                    list="l1" required pattern=".+">
                     <datalist id="l1">
                         <option>Male</option>
                         <option>Female</option>
+                        <option>Other</option>
                     </datalist>
                     
-                    <input type="text" name="language" placeholder="Language (Required)" required/>
+                    <input type="text" name="language" placeholder="Language (Required)" required pattern=".+"/>
                     <input type="text" name="about" placeholder="About/bio (Optional)" />
 
                     <p class="link">Already have an account?<br>
