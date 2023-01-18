@@ -1,0 +1,123 @@
+function username_check(username){
+    let pattern = /^[0-9][!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+    if (5 <= username.length <= 12){
+        if(username[0] == username[0].toUpperCase()){
+            if(pattern.test(username[username.length - 1])){
+                return True;
+                }
+            else{alert("Username must be between 5 and 12 characters long and start with a capital letter and end with a special character or number")}
+            }
+        else{alert("Username must be between 5 and 12 characters long and start with a capital letter and end with a special character or number")}
+        }
+    else{
+        alert("Username must be between 5 and 12 characters long and start with a capital letter and end with a special character or number")}}
+
+function password_check(password){
+    let pattern_password = /^[a-z][A-Z][0-9][!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+    if (password.length <= 12){
+        if(pattern_password.test(password)){
+            return true;
+        }
+        else{alert("Password must be at least 12 characters long, 14 is better and must contain a combination of letters, numbers and special characters")}}
+    else{alert("Password must be at least 12 characters long, 14 is better and must contain a combination of letters, numbers and special characters")}}
+
+function name_check(name){
+    let pattern_name = /^[a-zA-Z]*$/;
+    if(name = pattern_name.test(name)){
+        return true;
+    }
+    else{
+        alert("Name can only exist of letters!")
+    }}
+
+function zip_check(zip){
+    let pattern_zip = /^[0-9][a-zA-Z]*$/;
+    if (zip.length == 6){
+        if(parseInt(zip).length == 4){
+            if(zip == pattern_zip.test(zip)){
+                return true;
+            }
+            else{
+                alert("ZIP code must be of length 6, contains 4 numbers and 2 letters!")
+            }}
+        else{
+            alert("ZIP code must be of length 6, contains 4 numbers and 2 letters!")
+        }}
+    else{
+        alert("ZIP code must be of length 6, contains 4 numbers and 2 letters!")
+        }}
+
+function email_check(email){
+    if (email.includes("@")){
+        if(email.includes(".")){
+            return true;
+        }
+        else{
+            alert("Must be a valid E-mail address!")
+        }}
+    else{
+        alert("Must be a valid E-mail address!")
+        }}
+
+function sex_check(sex){
+    if (sex.toLowercase()  == "male" || sex.toLowercase() == "female"){
+        return true;
+    }
+    else{
+        alert("Sex should be male or female!")
+    }
+}
+
+function language_check(language){
+    let pattern_language = /^[a-zA-Z]*$/;
+    if(language = pattern_language.test(language)){
+        return true;
+    }
+    else{
+        alert("Language can only exist of letters!")
+    }}
+
+
+button.addEventListener("click", () => {  
+    
+    let x = 0;
+
+    //username
+    if(username_check(username)){
+        x++;
+    }
+    // password
+    if(password_check(password)){
+        x++;
+    }
+    // name
+    if(name_check(name)){
+        x++;
+    }
+
+    // country
+    if(country_check(country)){
+        x++;
+    }
+
+    //ZIP code
+    if(zip_check(zip)){
+        x++;
+    }
+
+    //email
+    if(email_check(email)){
+        x++;
+    } 
+    
+    //sex
+    if(sex_check(sex)){
+        x++;
+    }
+
+    //language
+    if(language_check(language)){
+        x++;
+    }
+
+});

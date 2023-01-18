@@ -24,3 +24,13 @@ body {
 .long-form {
     height: 750px;
 }
+
+form input:invalid:required {
+    border-bottom: 1px solid #aa2b2b;
+
+}
+
+form input:valid {
+    border-bottom: 1px solid #2ba2aa;
+
+}
