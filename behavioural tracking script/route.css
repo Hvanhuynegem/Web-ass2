@@ -1,0 +1,81 @@
+.columns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 120vh;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    transform: translate(0%, -5%);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.options h2 {
+    font-family: 'Arial';
+    font-size: 30px;    
+    padding-top: 10px;
+}
+
+.options p {
+    font-family: 'Arial';
+    font-size: 20px;
+}
+
+.options input:focus {
+    outline: none;
+}
+
+#order {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    transform: translate(0%, -5%);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#order h2 {
+    font-family: 'Arial';
+    font-size: 30px;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+#order p {
+    font-family: 'Arial';
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+#order input:focus {
+    outline: none;
+}
+
+#order iframe {
+    padding: 10px;
+    border: 2px;
+}
+
+@media screen and (max-width: 1045px) {
+    .columns {
+        width: 100%;
+    height: 180vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .columns {
+        width: 100%;
+    height: 240vh;
+    }
+}

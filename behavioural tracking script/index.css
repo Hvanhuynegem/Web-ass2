@@ -1,0 +1,25 @@
+.map {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8)50%, rgba(0, 0, 0, 0.8)50%);
+    border-radius: 5px;
+    padding: 10px;
+    height: 60vh;
+    width: 50%;   
+}
+
+iframe {
+    height: 60vh;
+    width: 100%;
+}
+
+@media screen and (max-width: 720px){
+    div.map {height: 60vh;
+        width: 70%;  }
+    
+    div.iframe {height: 60vh;
+        width: 70%;  }
+}
+

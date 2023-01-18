@@ -1,0 +1,26 @@
+body {
+    background-repeat: repeat;
+}
+
+
+.scontent {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 140vh;
+    color: #fff;
+    margin: 0;
+}
+
+.scontent h1 {
+    font-family: 'Arial';
+    font-size: 50px;
+    padding-left: 20px;
+    letter-spacing: 2px;
+}
+
+.long-form {
+    height: 750px;
+}
