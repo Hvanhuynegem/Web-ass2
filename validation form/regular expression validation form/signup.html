@@ -26,26 +26,62 @@
             <div class="scontent">
                 <h1>Sign Up</h1>
 
-                <form class="lform long-form" name="create-account-form">
-                    <input type="text" name="username" placeholder="username">
-                    <input type="password" name="password" placeholder="password">
-                    <input type="text" name="name" placeholder="Name">    
+                <form class="lform long-form" name="create-account-form" id="signup-form">
+                    <div class="form-field">
+                        <input type="text" name="username" placeholder="username">
+                        <small id="username-validity"></small>
+                    </div>
 
+                    <div class="form-field">
+                        <input type="password" name="password" placeholder="password">
+                        <small id="password-validity"></small>
+                    </div>
 
-                    <input type="text" name="ZIP" placeholder="Your ZIP">
-                    <input type="text" name="address" placeholder="Address">
-                    <input type="text" name="email" placeholder="Email">
-                    
-                    <input type="text" name="country" placeholder="Country">
-                    <input type="text" name="sex" placeholder="Sex">
-                    <input type="text" name="language" placeholder="Language">
-                    <input type="text" name="about" placeholder="About/bio">
+                    <div class="form-field">
+                        <input type="text" name="name" placeholder="Name">
+                        <small id="name-validity"></small>  
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="ZIP" placeholder="Your ZIP">
+                        <small id="zip-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="address" placeholder="Address">
+                        <small id="address-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="email" placeholder="Email">
+                        <small id="email-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="country" placeholder="Country">
+                        <small id="country-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="sex" placeholder="Sex">
+                        <small id="sex-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="language" placeholder="Language">
+                        <small id="language-validity"></small>
+                    </div>
+
+                    <div class="form-field">
+                        <input type="text" name="about" placeholder="About/bio">
+                        <small id="about-validity"></small>
+                    </div>
 
                     <p class="link">Already have an account?<br>
                         <a href="login.html">Login</a> here
                     </p>
 
-                    <button class="big-button wide-button" id="create-account">
+                    <button type="button" class="big-button wide-button" id="create-account">
                         <a href="index.html">Sign Up</a>
                     </button>
                 </form>

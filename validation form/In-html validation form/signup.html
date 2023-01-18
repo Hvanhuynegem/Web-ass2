@@ -72,6 +72,7 @@
                         <option>Other</option>
                     </datalist>
                     
+                    
                     <input type="text" name="language" placeholder="Language (Required)" required pattern=".+"/>
                     <input type="text" name="about" placeholder="About/bio (Optional)" />
 
@@ -79,7 +80,7 @@
                         <a href="login.html">Login</a> here
                     </p>
 
-                    <button class="big-button wide-button" id="create-account">
+                    <button class="big-button wide-button" id="create-account" onclick="return checkForm(event)">
                         <a href="index.html">Sign Up</a>
                     </button>
                 </form>
