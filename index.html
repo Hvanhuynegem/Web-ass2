@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 1</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="navbar">
+                <div class="icon">
+                    <a href="images/logo.png"></a>
+                </div>
+
+                <div class="loginsetup">
+                    <a href="login.html">
+                        <button class="small-button">Login / Set up</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="form-and-title">
+                    <h1>My Journey</h1>
+
+                    <div class="form">
+                        <input type="from" name="from" placeholder="begin destination (ex. Eindhoven)">
+                        <input type="to" name="to" placeholder="end destination (ex. Delft)">
+                        <input type="date" id="datetime" name="trip-start" min="2022-12-30" max="2023-12-31">
+                        <input type="time" id="datetime" name="time-start"
+                        min="09:00" max="18:00">
+                        
+
+                        <button class="big-button wide-button">
+                            <a href="route.html">Plan My Journey</a>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d316396.75382248993!2d4.580269938774673!3d51.71749334734925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x47c6d91b5579c39f%3A0xf39ad2648164b998!2sEindhoven!3m2!1d51.423142299999995!2d5.4622896999999995!4m5!1s0x47c5b5c3515f58fd%3A0x89b05ca3c54bd43d!2sDelft!3m2!1d52.011576899999994!2d4.3570677!5e0!3m2!1sen!2snl!4v1672410252828!5m2!1sen!2snl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
