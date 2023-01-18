@@ -23,56 +23,48 @@ const address = document.getElementById("address");
 const addressValidity = document.getElementById("address-validity");
 
 
-const username_pattern = new RegExp("([A-Z].{3,10}[^a-zA-Z])");
-const password_pattern = new RegExp("(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^0-9a-zA-Z]).{12,}");
-const name_pattern = new RegExp("[a-zA-Z]+");
+const username_pattern = new RegExp("([A-Z].{3,10}[^a-zA-Z])$");
+const password_pattern = new RegExp("(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^0-9a-zA-Z]).{12,}$");
+const name_pattern = new RegExp("[a-zA-Z]+$");
 
-const zip_pattern = new RegExp("[0-9]{4}[a-zA-Z]{2}");
-const email_pattern = new RegExp("[a-z0-9!#$%&'*+\-=?^_`{|}~](\.?[a-z0-9!#$%&'*+\-=?^_`{|}~])*@[a-z0-9.\-]+\.[a-z]{2,}");
+const zip_pattern = new RegExp("[0-9]{4}[a-zA-Z]{2}$");
+const email_pattern = new RegExp("[a-z0-9!#$%&'*+\-=?^_`{|}~](\.?[a-z0-9!#$%&'*+\-=?^_`{|}~])*@[a-z0-9.\-]+\.[a-z]{2,}$");
 
-const country_pattern = new RegExp(".+");
-const sex_pattern = new RegExp(".+");
-const language_pattern = new RegExp(".+");
+const country_pattern = new RegExp(".+$");
+const sex_pattern = new RegExp(".+$");
+const language_pattern = new RegExp(".+$");
 
 
 
 const checkUsername = (username) => {
-    const username_pattern = new RegExp("([A-Z].{3,10}[^a-zA-Z])");
     return username_pattern.test(username);
 };
 
 const checkPassword = (password) => {
-    const password_pattern = new RegExp("(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^0-9a-zA-Z]).{12,}");
     return password_pattern.test(password);
 };
 
 const checkName = (name) => {
-    const name_pattern = new RegExp("[a-zA-Z]+");
     return name_pattern.test(name);
 };
 
 const checkZip = (zip) => {
-    const zip_pattern = new RegExp("[0-9]{4}[a-zA-Z]{2}");
     return zip_pattern.test(zip);
 };
 
 const checkEmail = (email) => {
-    const email_pattern = new RegExp("[a-z0-9!#$%&'*+\-=?^_`{|}~](\.?[a-z0-9!#$%&'*+\-=?^_`{|}~])*@[a-z0-9.\-]+\.[a-z]{2,}");
     return email_pattern.test(email);
 };
 
 const checkCountry = (country) => {
-    const country_pattern = new RegExp(".+");
     return country_pattern.test(country);
 };
 
 const checkSex = (sex) => {
-    const sex_pattern = new RegExp(".+");
     return sex_pattern.test(sex);
 };
 
 const checkLanguage = (language) => {
-    const language_pattern = new RegExp(".+");
     return language_pattern.test(language);
 };
 
