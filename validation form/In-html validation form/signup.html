@@ -39,7 +39,7 @@
                     type="password" 
                     name="password" 
                     placeholder="password (Required)" 
-                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{12,}"
+                    required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^0-9a-zA-Z]).{12,}"
                     title="at least 12 characters long, but 14 or more is better. A
                     combination of uppercase letters, lowercase letters, numbers, and symbols"/><!-- not sure how to do this required pattern!-->
 
